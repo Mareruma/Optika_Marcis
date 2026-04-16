@@ -36,6 +36,20 @@
         x = mouseX;
         y = mouseY;
 
+        if (x >= 197) {
+            x = 196;
+        }
+        else if (x <= 10) {
+            x = 11;
+        }
+
+        if (y >= 390) {
+            y = 389;
+        }
+        else if (y <= 10) {
+            y = 11;
+        }
+
         // Rāmis
         strokeWeight(1);
         stroke("black");
@@ -90,6 +104,9 @@
         strokeWeight(3);
         stroke("gray");
         line(200 + f, 200, 200 + f, 200 + H);
+
+
+
 
         // d = 200 - kermenis.x;
         // if(d < 0){
