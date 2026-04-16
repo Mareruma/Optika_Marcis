@@ -54,6 +54,7 @@
         strokeWeight(1);
         stroke("black");
         line(0, 200, 400, 200);
+        line(200, 0, 200, 400);
         
 
         //lēca
@@ -87,6 +88,23 @@
         // stroke("green");
         // line(kermenis.x, kermenis.y, 200, attels.y);
         // line(200, attels.y, attels.x, attels.y);
+
+        // 1. Principiālais stars
+        strokeWeight(1);
+        stroke("red");
+        line(x, y, 200, y);
+        line(200, y, 200 + f, 200 + H);
+
+        // 2. Principiālais stars
+        strokeWeight(1);
+        stroke("blue");
+        line(x, y, 200 + f, 200 + H);
+
+        // 3. Principiālais stars
+        strokeWeight(1);
+        stroke("green");
+        line(x, y, 200, 200 + H);
+        line(200, 200 + H, 200 + f, 200 + H);
 
         d = 200 - x;
         f = (F * d) / (d - F);
