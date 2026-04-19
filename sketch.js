@@ -9,11 +9,15 @@
 let d, f, F;
 let x, y;
 let H, h;
+let garums;
+let koeficients;
+let attela_apaksa;
+let attela_augsa;
 
 function setup() {
     new Canvas(400, 500);
-
     F = 50;
+    garums = 50;
 }
 
 function update() {
@@ -33,6 +37,16 @@ function update() {
     } else if (y <= 10) {
         y = 11;
     }
+
+    // Nepieciešamo lielumu aprēķini
+    d = 200 - x;
+    f = (F * d) / (d - F);
+    h = 200 - y;
+    H = (f * h) / d;
+    koeficients = H / h;
+
+    attela_augsa = 200 + H;
+    attela_apaksa = attela_augsa + garums * koeficients;
 
     // Asis
     strokeWeight(1);
@@ -59,34 +73,28 @@ function update() {
     strokeWeight(1);
     stroke("red");
     line(x, y, 200, y);
-    line(200, y, 200 + f, 200 + H);
+    line(200, y, 200 + f, attela_augsa);
 
     // 2. Principiālais stars
     strokeWeight(1);
     stroke("blue");
-    line(x, y, 200 + f, 200 + H);
+    line(x, y, 200 + f, attela_augsa);
 
     // 3. Principiālais stars
     strokeWeight(1);
     stroke("green");
-    line(x, y, 200, 200 + H);
-    line(200, 200 + H, 200 + f, 200 + H);
-
-    // Nepieciešamo lielumu aprēķini
-    d = 200 - x;
-    f = (F * d) / (d - F);
-    h = 200 - y;
-    H = (f * h) / d;
+    line(x, y, 200, attela_augsa);
+    line(200, attela_augsa, 200 + f, attela_augsa);
 
     // Ķermeņa līnija
     strokeWeight(3);
     stroke("black");
-    line(x, y, x, 200);
+    line(x, y, x, y + garums);
 
     // Attēla līnija
     strokeWeight(3);
     stroke("gray");
-    line(200 + f, 200, 200 + f, 200 + H);
+    line(200 + f, attela_apaksa, 200 + f, attela_augsa);
 
 
     // Mērvienību rādīšana

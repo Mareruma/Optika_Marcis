@@ -1,9 +1,7 @@
 body {
     background-color: rgb(250, 234, 214);
-    padding: 25px;
 }
 
 h1 {
-  /* text-decoration: underline; */
   color: blue;
 }
