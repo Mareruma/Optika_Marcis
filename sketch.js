@@ -13,9 +13,14 @@ let garums;
 let koeficients;
 let attela_apaksa;
 let attela_augsa;
+let attela_augstums;
+let kermenis, attels;
 
 function setup() {
     new Canvas(400, 500);
+
+    kermenis = new Sprite();
+    attels = new Sprite();
     F = 50;
     garums = 50;
 }
@@ -46,7 +51,7 @@ function update() {
     koeficients = H / h;
 
     attela_augsa = 200 + H;
-    attela_apaksa = attela_augsa - garums * koeficients;
+    attela_apaksa = attela_augsa + garums * koeficients;
 
     // Asis
     strokeWeight(1);
@@ -86,15 +91,27 @@ function update() {
     line(x, y, 200, attela_augsa);
     line(200, attela_augsa, 200 + f, attela_augsa);
 
-    // Ķermeņa līnija
-    strokeWeight(3);
-    stroke("black");
-    line(x, y, x, y + garums);
+    // // Ķermeņa līnija
+    // strokeWeight(3);
+    // stroke("black");
+    // line(x, y, x, y + garums);
 
-    // Attēla līnija
-    strokeWeight(3);
-    stroke("gray");
-    line(200 + f, attela_apaksa, 200 + f, attela_augsa);
+    kermenis.x = x;
+    kermenis.y = y + garums /2;
+    kermenis.w = 20;
+    kermenis.h = garums;
+    kermenis.physics = KINEMATIC;
+
+    // // Attēla līnija
+    // strokeWeight(3);
+    // stroke("gray");
+    // line(200 + f, attela_apaksa, 200 + f, attela_augsa);
+    attela_augstums = attela_apaksa - attela_augsa;
+    attels.x = 200 + f;
+    attels.y = attela_augsa + attela_augstums / 2;
+    attels.w = 20;
+    attels.h =  attela_augstums;
+    attels.physics = KINEMATIC;
 
 
     // Mērvienību rādīšana
