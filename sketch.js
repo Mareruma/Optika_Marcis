@@ -103,13 +103,14 @@ function update() {
     rect(0, 400, 405, 105);
     strokeWeight(0);
     textSize(15);
-    text("F = "+ F + "px", 10, 415);
-    text("d = " + d + "px", 10, 430);
-    text("f = " + round(f) + "px", 10, 445);
-    text("H = " + round(H) + "px", 10, 460);
-    text("h = " + h + "px", 10, 475);
+    text("F = "+ F / 10 + "m", 10, 415);
+    text("d = " + d / 10 + "m", 10, 430);
+    text("f = " + round(f / 10, 2) + "m", 10, 445);
+    text("H = " + round(H / 10, 2) + "m", 10, 460);
+    text("h = " + round(h / 10, 2) + "m", 10, 475);
 
-    text("x = " + x, 210, 415);
-    text("y = " + y, 210, 430);
+    text("x = " + x + "m", 210, 415);
+    text("y = " + round(y, 2) + "m", 210, 430);
+    text("1m = 10px", 210, 475);
 
 }
