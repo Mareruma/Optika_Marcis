@@ -9,11 +9,9 @@
 let d, f, F;
 let x, y;
 let H, h;
-let garums;
+let garums, platums;
 let koeficients;
-let attela_apaksa;
-let attela_augsa;
-let attela_augstums;
+let attela_apaksa, attela_augsa, attela_augstums;
 let kermenis, attels;
 
 function setup() {
@@ -22,6 +20,7 @@ function setup() {
     kermenis = new Sprite();
     attels = new Sprite();
     F = 50;
+    platums = 20;
     garums = 50;
 }
 
@@ -98,7 +97,7 @@ function update() {
 
     kermenis.x = x;
     kermenis.y = y + garums /2;
-    kermenis.w = 20;
+    kermenis.w = platums;
     kermenis.h = garums;
     kermenis.physics = KINEMATIC;
 
@@ -109,7 +108,7 @@ function update() {
     attela_augstums = attela_apaksa - attela_augsa;
     attels.x = 200 + f;
     attels.y = attela_augsa + attela_augstums / 2;
-    attels.w = 20;
+    attels.w = platums * koeficients;
     attels.h =  attela_augstums;
     attels.physics = KINEMATIC;
 
