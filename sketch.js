@@ -101,31 +101,14 @@ function update() {
     line(x, y, 200, attela_augsa);
     line(200, attela_augsa, 200 + f, attela_augsa);
 
-    // // Ķermeņa līnija
-    // strokeWeight(3);
-    // stroke("black");
-    // line(x, y, x, y + garums);
-
     kermenis.x = x;
     kermenis.y = y + garums /2;
-    // kermenis.w = platums;
-    // kermenis.h = garums;
-    // lielumsX = kermenis.w / zimulisImg.width;
-    // lielumsY = kermenis.h / zimulisImg.height;
     kermenis.physics = KINEMATIC;
     kermenis.scale = garums / zimulisImg.height;
 
-    // // Attēla līnija
-    // strokeWeight(3);
-    // stroke("gray");
-    // line(200 + f, attela_apaksa, 200 + f, attela_augsa);
     attela_augstums = garums * koeficients;
     attels.x = 200 + f;
     attels.y = attela_augsa - attela_augstums / 2;
-    // attels.w = abs(platums * koeficients);
-    // attels.h =  attela_augstums;
-    // lielumsXa = attels.w / zimulisImg.width;
-    // lielumsYa = attels.h / zimulisImg.height;
     attels.scale = attela_augstums / zimulisImg.height;
     attels.physics = KINEMATIC;
     attels.rotation = 180;
