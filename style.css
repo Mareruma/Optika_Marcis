@@ -1,7 +1,29 @@
+/* https://www.w3schools.com/css/css_navbar_vertical.asp */
+
 body {
     background-color: rgb(250, 234, 214);
 }
 
 h1 {
   color: blue;
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  width: 200px;
+  background-color: brown;
+}
+
+li a {
+  display: block;
+  color: antiquewhite;
+  padding: 8px 16px;
+  text-decoration: none;
+}
+
+li a:hover {
+  background-color: chocolate;
+  color: white;
 }

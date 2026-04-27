@@ -55,7 +55,7 @@ function update() {
 
     // Nepieciešamo lielumu aprēķini
     d = 200 - x;
-    f = (F * d) / (d - F);
+    f = -((F * d) / (d + F));
     h = 200 - y;
     H = (f * h) / d;
     koeficients = H / h;
