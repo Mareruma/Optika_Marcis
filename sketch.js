@@ -102,13 +102,13 @@ function update() {
     line(200, attela_augsa, 200 + f, attela_augsa);
 
     kermenis.x = x;
-    kermenis.y = y + garums /2;
+    kermenis.y = y + garums /4;
     kermenis.physics = KINEMATIC;
     kermenis.scale = garums / zimulisImg.height;
 
     attela_augstums = garums * koeficients;
     attels.x = 200 + f;
-    attels.y = attela_augsa - attela_augstums / 2;
+    attels.y = attela_augsa - attela_augstums / 4;
     attels.scale = attela_augstums / zimulisImg.height;
     attels.physics = KINEMATIC;
     attels.rotation = 180;
